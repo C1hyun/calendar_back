@@ -6,23 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TodosModule = void 0;
+exports.AuthModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const todo_entity_1 = require("../entities/todo.entity");
 const user_entity_1 = require("../entities/user.entity");
-const schedule_entity_1 = require("../entities/schedule.entity");
-const todos_controller_1 = require("./todos.controller");
-const todos_service_1 = require("./todos.service");
-let TodosModule = class TodosModule {
+const auth_service_1 = require("./auth.service");
+const auth_controller_1 = require("./auth.controller");
+let AuthModule = class AuthModule {
 };
-exports.TodosModule = TodosModule;
-exports.TodosModule = TodosModule = __decorate([
+exports.AuthModule = AuthModule;
+exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([todo_entity_1.Todo, user_entity_1.User, schedule_entity_1.Schedule])],
-        controllers: [todos_controller_1.TodosController],
-        providers: [todos_service_1.TodosService],
-        exports: [todos_service_1.TodosService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([user_entity_1.User])],
+        controllers: [auth_controller_1.AuthController],
+        providers: [auth_service_1.AuthService],
     })
-], TodosModule);
-//# sourceMappingURL=todos.module.js.map
+], AuthModule);
+//# sourceMappingURL=auth.module.js.map

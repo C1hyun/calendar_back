@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TodosModule } from './todos/todos.module';
+import { AuthModule } from './auth/auth.module';
+import { SchedulesModule } from './schedules/schedules.module';
 
 @Module({
   imports: [
@@ -39,6 +41,8 @@ import { TodosModule } from './todos/todos.module';
       },
     }),
     TodosModule,
+    AuthModule,
+    SchedulesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

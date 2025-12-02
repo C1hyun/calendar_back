@@ -6,23 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TodosModule = void 0;
+exports.SchedulesModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const todo_entity_1 = require("../entities/todo.entity");
-const user_entity_1 = require("../entities/user.entity");
+const schedules_controller_1 = require("./schedules.controller");
+const schedules_service_1 = require("./schedules.service");
 const schedule_entity_1 = require("../entities/schedule.entity");
-const todos_controller_1 = require("./todos.controller");
-const todos_service_1 = require("./todos.service");
-let TodosModule = class TodosModule {
+const user_entity_1 = require("../entities/user.entity");
+let SchedulesModule = class SchedulesModule {
 };
-exports.TodosModule = TodosModule;
-exports.TodosModule = TodosModule = __decorate([
+exports.SchedulesModule = SchedulesModule;
+exports.SchedulesModule = SchedulesModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([todo_entity_1.Todo, user_entity_1.User, schedule_entity_1.Schedule])],
-        controllers: [todos_controller_1.TodosController],
-        providers: [todos_service_1.TodosService],
-        exports: [todos_service_1.TodosService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([schedule_entity_1.Schedule, user_entity_1.User])],
+        controllers: [schedules_controller_1.SchedulesController],
+        providers: [schedules_service_1.SchedulesService],
     })
-], TodosModule);
-//# sourceMappingURL=todos.module.js.map
+], SchedulesModule);
+//# sourceMappingURL=schedules.module.js.map
